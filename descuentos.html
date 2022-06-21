@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentajes y descuentos | Curso Práctico de JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>Porcentajes y descuentos</h1>
+        <p>Este es el segundo taller del Curso Práctico de JavaScript</p>
+    </header>
+
+    <section>
+        <h2>Calcula el precio a pagar de tus productos con descuento</h2>
+
+        <form>
+            <label for="inputPrice">Introduce el precio de tu producto:</label>
+            <input type="number" id="inputPrice">
+            <label for="inputDescuento">Introduce el descuento a aplicar:</label>
+            <input type="number" id="inputDescuento">
+            <button type="button" onclick="onClickPrecioConDescuento()">Calcular</button>
+
+            <p id="resultadoPrecio"></p>
+        </form>
+    </section>
+    
+    <section>
+        <h2>¿Tienes un cupón?</h2>
+
+        <form>
+            <img src="https://cdn.shopify.com/s/files/1/0007/6978/5911/products/D_NQ_NP_647513-MLM48204769266_112021-O_800x.webp?v=1653329292" alt="Audífonos rosas con orejas de gato">
+
+            <label for="inputPriceProduct">Precio del producto $:</label>
+            <input type="number" id="inputPriceProduct">
+            <label for="inputCupon">¿Tienes un cupón de descuento? Introdúcelo</label>
+            <input type="text" id="inputCupon">
+            <button type="button" onclick="aplicarCupon()">Calcular precio a pagar</button>
+
+            <p id="resultadoPrecioProduct"></p>
+        </form>
+    </section>
+
+    <script src="./descuentos.js"></script>
+</body>
+</html>
