@@ -26,6 +26,7 @@ html {
 a{
   text-decoration: none;
   font-family: var(--fontDmSans);
+  color: #000;
 }
 .nav__menu a:hover, .nav__menu a:active{
   border-bottom: 1px solid var(--darkColor);
