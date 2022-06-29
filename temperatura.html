@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadística | Math Helper</title>
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/estadistica.css">
+    <link rel="stylesheet" href="./css/temperatura.css">
 </head>
 <body>
     <header class="header">    <!--HEADER  -->
@@ -30,28 +30,34 @@
         </nav>
 
         <section class="hero">
-            <h1 class="hero_title">Estadística</h1>
-            <p class="hero_paragraph">Aquí podrás calcular la Moda, Promedio y Mediana de un grupo de valores</p>
+            <h1 class="hero_title">Temperatura</h1>
+            <p class="hero_paragraph">Aquí podrás realizar la conversión entre grados Celsius, Fahrenheit y Kelvin</p>
         </section>
     </header>
 
     <main class="main"> <!--MAIN-->
-        <h2>Calculadora de promedio, mediana y moda</h2>
+        <h2>Conversor de Temperaturas</h2>
         <section>
             <form class="form">
-                <label for="inputLista">Introduce una secuencia de números separados por una coma </label>
-                <input type="text" id="inputLista" placeholder="Ej. 1,2,3,4,5">
-                <div class="inputs-container">
-                    <input class="section__button" type="button" value="Calcular Moda" onclick="onClickCalcularModa()">
-                    <p class="res" id="resultado1">Moda</p>
-                    <p class="res" id="resultado1Veces"></p>
-                    <input class="section__button" type="button" value="Calcular Promedio" onclick="onClickCalcularPromedio()">
-                    <p class="res" id="resultado2">Promedio</p>
-                    <p class="res" id="resultado2Veces"></p>
-                    <input class="section__button" type="button" value="Calcular Mediana" onclick="onClickCalcularMediana()">
-                    <p class="res" id="resultado3">Mediana</p>
-                    <p class="res" id="resultado3Veces"></p>
-                </div>
+                <label for="temperaturaS">De:</label>
+                <select name="temperatura" id="temperaturaS" class="temperature">
+                    <option value="C">Celsius</option>
+                    <option value="F">Fahrenheit</option>
+                    <option value="K">Kelvin</option>
+                </select>
+
+                <label for="temperaturaC">A:</label>
+                <select name="temperatura" id="temperaturaC" class="temperature">
+                    <option value="C">Celsius</option>
+                    <option value="F">Fahrenheit</option>
+                    <option value="K">Kelvin</option>
+                </select>
+                
+                <label for="inputLista">Introduce la cantidad a convertir </label>
+                <input type="text" id="inputTemp" placeholder="Ej. 25" class="input__form">
+                
+                <p id="resultado"></p>
+                <input class="section__button" type="button" value="Convertir" onclick="obtenerTemp()">
             </form>
         </section>
     </main>
@@ -64,6 +70,6 @@
         </div>
     </footer>
 
-    <script src="./js/estadistica.js"></script>
+    <script src="./js/temperatura.js"></script>
 </body>
 </html>

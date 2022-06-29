@@ -27,9 +27,7 @@ function calcularModa() {
         }
     );
     const moda = lista1Array[lista1Array.length - 1];
-    console.log(moda);
-    // const elementoModa = moda[0];
-    // const vecesRepite = moda [1];   
+    return moda; 
 };
 
 //PROMEDIO
@@ -42,9 +40,8 @@ function calcularPromedio() {
     );
 
     const promedioLista = sumaLista / lista.length;
-    // const resultadoPromedio = document.getElementById("resultadoPromedio");
-    // resultadoPromedio.innerText = promedioLista;
-    console.log(promedioLista);
+    
+    return promedioLista;
 };
 
 //MEDIANA
@@ -75,7 +72,43 @@ function calcularMediana() {
     }else{
         mediana = lista[mitadLista];
     }
-    console.log(mediana);
+    return mediana;
 };
+
+/*HTML*/
+function onClickCalcularModa(){
+    let moda = calcularModa();
+    let elemento = moda[0];
+    let veces = moda[1];
+    console.log(moda);
+    const resultado = document.getElementById("resultado1");    
+    const resultado2 = document.getElementById("resultado1Veces");
+
+    if(elemento == 0){
+        resultado.innerText = `Favor de introducir valores`;
+        resultado2.innerText = `!!`;
+    }else{
+        resultado.innerText = `La moda es: ${elemento}`;
+        resultado2.innerText = `Se repite ${veces} veces`;
+    }
+}
+
+function onClickCalcularPromedio(){
+    let value = calcularPromedio();
+    const resultado = document.getElementById("resultado2");    
+    const resultado2 = document.getElementById("resultado2Veces");
+
+    resultado.innerText = `El promedio/media aritmetica es:`;
+    resultado2.innerText = `${value}`;
+}
+
+function onClickCalcularMediana(){
+    let value = calcularMediana();
+    const resultado = document.getElementById("resultado3");    
+    const resultado2 = document.getElementById("resultado3Veces");
+    resultado.innerText = `La mediana es:`;
+    resultado2.innerText = `${value}`;
+    console.log(value);
+}
 
 

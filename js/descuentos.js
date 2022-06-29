@@ -41,12 +41,12 @@ function aplicarCupon(){
 
     const cupon = descuentoDelCupon()
     const precioFinal = calcularPrecioConDescuento(priceProduct,cupon);
-    
+    const resultadoPrice = document.getElementById("resultadoPrecioProduct");
     if (cupon === 0){
+        resultadoPrice.innerText = `Cupón no válido.`
         alert("El cupón no es válido")
     }else{
-        const resultadoPrice = document.getElementById("resultadoPrecioProduct");
-        resultadoPrice.innerText = `$${precioFinal}`
+        resultadoPrice.innerText = `Se aplico un ${cupon}% de descuento. El precio final es: $${precioFinal}`
     }  
 };
 

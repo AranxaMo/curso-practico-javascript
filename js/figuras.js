@@ -26,32 +26,33 @@ console.groupEnd();
 //Altura triangulo isosceles 
 function calcularAltura(lado,base) {
     const altura = Math.sqrt((lado**2)-((base**2)/4));
-    console.log(altura);
+    if (altura === 0) alert("Error, introduce datos válidos");
+    return altura;
 }
 
 function alturaTriangulo(lado1,lado2,lado3) {
-    if(lado1+lado2 <= lado3 || lado1+lado3 <= lado2 || lado2+lado3 <= lado1){
-        console.log("Este triángulo no existe, introduce otros valores");
-    }else{
-       switch (true) {
-        case lado1 === lado2 && lado1 != lado3:
-            calcularAltura(lado1,lado3)
-        break;
-        case lado1 === lado3 && lado1 != lado2:
-            calcularAltura(lado3,lado2)
-        break;
-        case lado2 === lado3 && lado2 != lado1:
-            calcularAltura(lado2,lado1)
-        break;
-        case lado1 === lado2 && lado2 === lado3:
-            console.log("Este es un triángulo equilatero")
-            calcularAltura(lado2,lado1)
-        break;
-        default: 
-            console.log("Este no es un triángulo isósceles")
-        break;
-       }
+    const alerta = document.getElementById("resultadoAlerta");
+    let value = 0;
+    switch (true) {
+    case lado1 === lado2 && lado1 != lado3:
+        value = calcularAltura(lado1,lado3)
+    break;
+    case lado1 === lado3 && lado1 != lado2:
+        value = calcularAltura(lado3,lado2)
+    break;
+    case lado2 === lado3 && lado2 != lado1:
+        value = calcularAltura(lado2,lado1)
+    break;
+    case lado1 === lado2 && lado2 === lado3:
+        alerta.innerText = "Este es un triángulo equilatero";
+        value = calcularAltura(lado2,lado1)
+    break;
+    default: 
+        alerta.innerText = "Este no es un triángulo isósceles";
+    break;
     }
+
+    return value;
 };
 
 //Código del circulo
@@ -79,7 +80,8 @@ function calcularPerimetroCuadrado() {
     const value = input.value;
 
     const perimetro = perimetroCuadrado(value);
-    alert(perimetro);
+    const resultado = document.getElementById("resultadoPe1");
+    resultado.innerText = `El perímetro es: ${perimetro} cm`;
 };
 
 function calcularAreaCuadrado() {
@@ -87,7 +89,8 @@ function calcularAreaCuadrado() {
     const value = input.value;
 
     const area = areaCuadrado(value);
-    alert(area);
+    const resultado = document.getElementById("resultadoA1");
+    resultado.innerText = `El perímetro es: ${area} cm^2`;
 };
 
     //TRIANGULO
@@ -102,7 +105,8 @@ function calcularPerimetroTriangulo() {
     const base = inputB.value;
 
     const perimetro = perimetroTriangulo(lado1, lado2, base);
-    alert(perimetro);
+    const resultado = document.getElementById("resultadoPe2");
+    resultado.innerText = `El perímetro es: ${perimetro} cm`;
 };
 
 function calcularAreaTriangulo() {
@@ -113,7 +117,8 @@ function calcularAreaTriangulo() {
     const altura = inputA.value;
 
     const area = areaTriangulo(base,altura)
-    alert(area);
+    const resultado = document.getElementById("resultadoA2");
+    resultado.innerText = `El perímetro es: ${area} cm^2`;
 };
 
     //Circulo
@@ -122,7 +127,8 @@ function calcularPerimetroCirculo() {
     const radio = input.value;
 
     const perimetro = perimetroCirculo(radio);
-    alert(perimetro);
+    const resultado = document.getElementById("resultadoPe3");
+    resultado.innerText = `El perímetro es: ${perimetro} cm`;
 };
 
 function calcularAreaCirculo() {
@@ -130,7 +136,25 @@ function calcularAreaCirculo() {
     const radio = input.value;
 
     const area = areaCirculo(radio);
-    alert(area);
+    const resultado = document.getElementById("resultadoA3");
+    resultado.innerText = `El perímetro es: ${area} cm^2`;
+};
+
+//Triangulo 2
+function calcularAlturaTriangulo(){
+    const inputL1 = document.getElementById("inputTriangulo2L1");
+    const lado1 = inputL1.value;
+
+    const inputL2 = document.getElementById("inputTriangulo2L2");
+    const lado2 = inputL2.value;
+
+    const inputB = document.getElementById("inputTriangulo2B");
+    const lado3 = inputB.value;
+
+    const altura = alturaTriangulo(lado1,lado2,lado3);
+    const resultado = document.getElementById("resultadoAltura");
+    console.log(altura);
+    resultado.innerText = `La altura es: ${altura} cm`;
 };
 
     
