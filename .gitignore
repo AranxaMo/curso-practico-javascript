@@ -105,9 +105,4 @@ dist
 
 # Configuración de Visual Studio Code
 .vscode
-mediana.html
-mediana.js
-promedio.html
-promedio.js
-salarios.html
-salarios.js
+/ignore/*
